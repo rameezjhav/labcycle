@@ -86,6 +86,7 @@ const Header = ({
             bottomDivider && 'has-bottom-divider'
           )}>
           <Logo />
+            <h3><span className="text-color-primary">LabCycle Ltd</span></h3>
           {!hideNav &&
             <>
               <button
@@ -105,16 +106,27 @@ const Header = ({
                     'header-nav',
                     isActive && 'is-active'
                   )}>
-                <div className="header-nav-inner">
+                <div className="header-nav-inner text-color-primary">
                   <ul className={
                     classNames(
-                      'list-reset text-xs',
+                      'list-reset text-xs text-color-primary',
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
-                      <Link to="#0" onClick={closeMenu}>Documentation</Link>
+                      <Link to="team" onClick={closeMenu}>Team</Link>
+                    </li>
+                    <li>
+                      <Link to="news" onClick={closeMenu}>News</Link>
+                    </li>
+                    <li>
+                      <Link to="invest" onClick={closeMenu}>For Investors</Link>
+                    </li>
+                    <li>
+                      <Link to="contact-us" onClick={closeMenu}>Contact Us</Link>
                     </li>
                   </ul>
+                  {/*
+                  CURRENTLY TO SCOPE FOR HAVING ACCOUNTS SIGN UP
                   {!hideSignin &&
                     <ul
                       className="list-reset header-nav-right"
@@ -122,7 +134,7 @@ const Header = ({
                       <li>
                         <Link to="#0" className="button button-primary button-wide-mobile button-sm" onClick={closeMenu}>Sign up</Link>
                       </li>
-                    </ul>}
+                    </ul>} */}
                 </div>
               </nav>
             </>}
